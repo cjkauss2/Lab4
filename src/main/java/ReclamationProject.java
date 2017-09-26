@@ -8,19 +8,36 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
-        /*
-         * For loop with i
-         */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+/**
+ *
+ */
+public class ReclamationProject {
+    /**
+     *
+     * @param str1 first inputed string
+     * @param str2 second inputed string
+     * @return longest substring
+     */
+    static String findLongestSubstring(final String str1, final String str2) {
+        String shortString = str1;
+        String longString = str2;
+        if (str1.length() > str2.length()) {
+            //String temp = str1;
+            shortString = str2;
+            longString = str1;
+        }
+        String longestSubstring = "";
+
+        for (int i = 0; i < longString.length(); i++) {
+            for (int j = longString.length() - i; j > 0; j--) {
+                for (int k = 0; k < shortString.length() - j; k++) {
+                    if (longString.regionMatches(i, shortString, k, j)
+                            && j > longestSubstring.length()) {
+                        longestSubstring = longString.substring(i, i + j);
+                    }
+                }
+            }
+        }
+        return longestSubstring;
+    }
 }
