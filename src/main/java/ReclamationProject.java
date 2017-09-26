@@ -1,4 +1,4 @@
-/*
+/**
  * The following code needs a lot of TLC. So give it some!
  *
  * 1. Fix all checkstyle errors
@@ -7,22 +7,18 @@
  * 4. Add comments and Javadoc comments where needed
  * 5. Remove unnecessary comments as appropriate
  */
-
-/**
- *
- */
 public class ReclamationProject {
     /**
-     *
+     * The following function compares two inputed strings
+     * and returns the longest substring that appears in both strings.
      * @param str1 first inputed string
      * @param str2 second inputed string
-     * @return longest substring
+     * @return longest common substring
      */
     static String findLongestSubstring(final String str1, final String str2) {
         String shortString = str1;
         String longString = str2;
         if (str1.length() > str2.length()) {
-            //String temp = str1;
             shortString = str2;
             longString = str1;
         }
